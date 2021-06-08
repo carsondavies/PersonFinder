@@ -1,33 +1,37 @@
 # PersonFinder Documentation for Interacting with Endpoints
 
-[HttpGet] GetPeople();
-  URL: 'https://localhost:<localport>/people'    <- this will return all the Persons in the database and is the default route
-  for searching by string: 'https://localhost:<localport>/people?searchInput=J'    <- this will return 2 Persons, Jerry Westberg, and Jared Dukepoo
-  
-  This GET endpoint takes in 1 parameter that is a string called searchInput. If the parameter is empty or null, then it returns the entire list of people from the database.
+ This GET endpoint takes in 1 parameter that is a string called searchInput. If the parameter is empty or null, then it returns the entire list of people from the database.
   If there is a string passed in, it loops through the people and compares the string to see if it matches any of the PersonName attributes on the Person objects.
   If the string is found within any of the PersonNames then it adds those objects to a new list and returns the filteredResults. Right now,
   it is case sensitive, So make sure to be specific in your search. Will be adding case insensitivity in the future.
+  <br>
+  <br>
+
+[HttpGet] GetPeople(); <br>
+  URL: 'https://localhost:LOCALPORT/people'    <- this will return all the Persons in the database and is the default route. <br> 
+  For searching by string: 'https://localhost:LOCALPORT/people?searchInput=J'    <- this will return 2 Persons, Jerry Westberg, and Jared Dukepoo. <br>
+  replace LOCALPORT in the URL with the one your own machine is using respectively.
+  
+  <br>
   
   
-  
-  [HttpPost] InsertPerson();
+  [HttpPost] InsertPerson(); <br>
   This POST endpoint takes in a Person object and creates a new person within the database that matches all the appropriate attributes that are contained in the Person class.
   
   Use Postman to hit this endpoint.
   1) make a POST request
   2) Copy and paste the following URL and insert the local port appropriately:
-     'https://localhost:<localport>/people/insertperson'
+     'https://localhost:LOCALPORT/people/insertperson'
   3) Select 'Body'
   4) Select 'raw'
   5) Select 'JSON'
   6) Copy and pase the following code:
-  
-{
-  "PersonName":"Rebecca Burroughs",
-  "PersonAge": 30,
-  "PersonAddress": "48 n 40 e",
-  "PersonInterests": "hiking"
+
+{ <br>
+  "PersonName" : "Rebecca Burroughs", <br>
+  "PersonAge" : 30, <br>
+  "PersonAddress" : "48 n 40 e", <br>
+  "PersonInterests" : "hiking"<br>
 }
 
 7) the response should return a string that says "Person saved to database"
