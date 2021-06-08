@@ -1,8 +1,8 @@
 # PersonFinder Documentation for Interacting with Endpoints
 
 [HttpGet] GetPeople();
-  URL: https://localhost:<localport>/people    <- this will return all the Persons in the database and is the default route
-  for searching by string: https://localhost:<localport>/people?searchInput=J    <- this will return 2 Persons, Jerry Westberg, and Jared Dukepoo
+  URL: 'https://localhost:<localport>/people'    <- this will return all the Persons in the database and is the default route
+  for searching by string: 'https://localhost:<localport>/people?searchInput=J'    <- this will return 2 Persons, Jerry Westberg, and Jared Dukepoo
   
   This GET endpoint takes in 1 parameter that is a string called searchInput. If the parameter is empty or null, then it returns the entire list of people from the database.
   If there is a string passed in, it loops through the people and compares the string to see if it matches any of the PersonName attributes on the Person objects.
@@ -17,7 +17,7 @@
   Use Postman to hit this endpoint.
   1) make a POST request
   2) Copy and paste the following URL and insert the local port appropriately:
-     https://localhost:<localport>/people/insertperson
+     'https://localhost:<localport>/people/insertperson'
   3) Select 'Body'
   4) Select 'raw'
   5) Select 'JSON'
