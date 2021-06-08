@@ -1,9 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 using PeopleFinder.Controllers;
 using PersonFinder.Models;
-using PeopleFinder; 
-using Moq;
+using System.Collections.Generic;
 
 namespace PeopleControllerTests
 {
@@ -15,17 +13,13 @@ namespace PeopleControllerTests
         {
             //Setup
             PeopleController controller = new PeopleController();
-            /*controller.People.Add(new Person { PersonName = "Adam Schraedel", PersonAddress = "34 baker st", PersonAge = 32, PersonInterests = "dancing" });
-            controller.People.Add(new Person { PersonName = "Jared Dukepoo", PersonAddress = "123 n 30 e", PersonAge = 20, PersonInterests = "singing" });
-            controller.People.Add(new Person { PersonName = "Heather Peterson", PersonAddress = "333 W 200 N", PersonAge = 39, PersonInterests = "scrapbooking" });
-            controller.People.Add(new Person { PersonName = "Carson Davies", PersonAddress = "1603 N 430 W", PersonAge = 28, PersonInterests = "acting" });
-            controller.People.Add(new Person { PersonName = "Jerry Westberg", PersonAddress = "632 S 400 E", PersonAge = 31, PersonInterests = "opera" });*/
+
 
             //Test
             IList<Person> results = controller.GetPeople(null);
 
             Assert.IsNotNull(results, "the results list should not be null");
-            Assert.AreEqual(12, results.Count, "there should be 7 Persons");
+            Assert.AreEqual(5, results.Count, "there should be 5 or more Persons (depending on how many times you hit the endpoint, see README for details");
         }
 
         [TestMethod]

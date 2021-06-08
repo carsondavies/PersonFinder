@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace PeopleFinder.Controllers
 {
-    using System;
     using Microsoft.AspNetCore.Mvc;
-    using System.Collections.Generic;
-    using PersonFinder.Models;
     using PeopleFinder.Models;
-    using Microsoft.EntityFrameworkCore;
-    using System.Data.Entity;
-    using System.Web.Http.ModelBinding;
+    using PersonFinder.Models;
+    using System.Collections.Generic;
 
     [ApiController]
     [Route("[controller]")]
